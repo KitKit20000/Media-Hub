@@ -1,0 +1,39 @@
+{
+  "name": "media-hub",
+  "version": "1.0.0",
+  "main": "main.js",
+  "description": "An all-in-one media hub application",
+  "author": "KitKit20000",
+  "scripts": {
+    "start": "electron --js-flags=--max-old-space-size=4096 .",
+    "pack": "electron-packager . media-hub --platform=win32 --arch=x64 --out=release --overwrite",
+    "dist": "electron-builder",
+    "build": "npm run dist"
+  },
+  "dependencies": {
+    "electron-log": "^4.4.7",
+    "electron-updater": "^6.3.9"
+  },
+  "devDependencies": {
+    "electron": "^34.2.0",
+    "electron-builder": "^24.1.0",
+    "electron-packager": "^17.1.2"
+  },
+  "build": {
+    "appId": "com.mediahub",
+    "productName": "Media Hub",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "KitKit20000",
+        "repo": "Media-Hub"
+      }
+    ]
+  }
+}
